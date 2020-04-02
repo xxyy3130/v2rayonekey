@@ -9,10 +9,10 @@ cd "$(
 #====================================================
 #	System Request:Debian 9+/Ubuntu 18.04+/Centos 7+
 #	Author:	wulabing
-#	Dscription: V2ray ws+tls onekey Management
+#	Dscription: V2ray WS+Tls Onekey Management
 #	Version: 1.0
-#	email:admin@wulabing.com
-#	Official document: www.v2ray.com
+#	Email:admin@wulabing.com
+#	Official Document: www.v2ray.com
 #====================================================
 
 #fonts color
@@ -230,9 +230,9 @@ basic_optimization() {
 }
 port_alterid_set() {
     if [[ "on" != "$old_config_status" ]]; then
-        read -rp "请输入连接端口（default:443）:" port
+        read -rp "请输入连接端口（Default:443）:" port
         [[ -z ${port} ]] && port="443"
-        read -rp "请输入alterID（default:2 仅允许填数字）:" alterID
+        read -rp "请输入alterID（Default:2 仅允许填数字）:" alterID
         [[ -z ${alterID} ]] && alterID="2"
     fi
 }
@@ -419,7 +419,7 @@ ssl_install() {
     judge "安装 SSL 证书生成脚本"
 }
 domain_check() {
-    read -rp "请输入你的域名信息(eg:www.wulabing.com):" domain
+    read -rp "请输入你的域名信息(www.wulabing.com):" domain
     domain_ip=$(ping "${domain}" -c 1 | sed '1{s/[^(]*(//;s/).*//;q}')
     echo -e "${OK} ${GreenBG} 正在获取 公网ip 信息，请耐心等待 ${Font}"
     local_ip=$(curl -4 ip.sb)
